@@ -1,1 +1,16 @@
+@import url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap');
+
 /* My CSS JS GAME */
+
+/* Font families for the project */
+* {
+    font-family: 'Lato',
+        sans-serif;
+    font-family: 'Roboto',
+        sans-serif;
+}
+
+/* Body of the page */
+
+/* Player Part */
