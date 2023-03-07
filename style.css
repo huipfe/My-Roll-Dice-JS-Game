@@ -38,3 +38,84 @@ body {
 }
 
 /* Player Part */
+
+.playerZone {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #fff;
+    width: 50%;
+    height: 100%;
+}
+
+.playerZone.active {
+    background-color: #e6e3e3;
+}
+
+.playerZone.active .playerName {
+    font-weight: 300px;
+}
+
+.playerZone.active .playerName::after {
+    content: '•';
+    position: absolute;
+    margin-left: 10px;
+    color: #850514;
+    animation-duration: .5s;
+    animation-name: blink;
+    animation-iteration-count: infinite;
+    transition: opacity 0.2s;
+}
+
+.playerTotalScore {
+    margin: 0;
+    margin-top: 10vh;
+    padding: 0;
+    font-size: 6vw;
+    font-weight: 100;
+    color: #850514;
+    margin-bottom: auto;
+}
+
+.playerTotalScore::after {
+    content: '/100';
+    font-size: 3vw;
+    color: #777;
+}
+
+/* Player Box */
+.playerActuelScoreBox {
+    margin: 0;
+    margin-top: 5vh;
+    margin-bottom: 20vh;
+    padding: 1.5vh;
+    min-width: 15%;
+    background-color: #850514;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 8px;
+    opacity: 0.9;
+}
+
+.playerActuelScoreTitle {
+    margin: 0;
+    padding: 0;
+    font-size: 1.3vw;
+    font-weight: 300;
+    color: #242222;
+    text-transform: uppercase;
+}
+
+.playerActuelScore {
+    margin: 0;
+    padding: 0;
+    font-size: 3.5vw;
+    font-weight: 300;
+    color: #fff;
+}
+
+/* Winning part */
+
+
+/* New Game & Hold Part */
