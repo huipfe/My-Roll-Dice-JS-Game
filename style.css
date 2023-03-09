@@ -119,8 +119,72 @@ body {
 
 
 /* New Game & Hold Part */
+.newgame {
+    top: 5vw;
+    font-size: 3.5vw;
+    font-size: 1.5vw;
+    color: #111;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: absolute;
+    background-color: #ffffff99;
+    padding: 1vw;
+    border-radius: 8px;
+}
 
+.newGame::before {
+    font-weight: 900;
+    margin-right: 0.5rem;
+    color: #AE0115;
+    opacity: 0.8;
+    content: '\f522';
+}
 
+.hold,
+.newGame,
+.hold:focus,
+.newGame:focus,
+.hold:active,
+.newGame:active,
+.hold:visited,
+.newGame:visited {
+    color: #111;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: absolute;
+    background-color: #ffffff99;
+    padding: 1vw;
+    border-radius: 8px;
+}
+
+.newGame {
+    top: 4.5vh;
+    font-size: 1.5vw;
+}
+
+.hold {
+    top: 22vh;
+    font-size: 2vw;
+}
+
+.hold:hover,
+.newGame:hover,
+.rules:hover {
+    color: #777;
+    background-color: #fff
+}
+
+.hold::before,
+.newGame::before {
+    font-family: 'Font Awesome\ 5 Free';
+    font-weight: 900;
+    margin-right: 0.5rem;
+    color: #AE0115;
+    opacity: 0.8;
+    content: '\f055';
+}
 
 /* Roll Dice*/
 /* image/DiceNumber1.png */
@@ -165,7 +229,15 @@ body {
 }
 
 /* Animation */
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
 
+    100% {
+        opacity: 1;
+    }
+}
 
 /* Media Queries */
 /* Phone version */
