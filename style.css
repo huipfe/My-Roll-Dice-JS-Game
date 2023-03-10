@@ -364,7 +364,6 @@ body {
     }
 
     .playerZone {
-        padding: 25px;
         width: 100%;
         height: 50%;
     }
@@ -379,12 +378,16 @@ body {
         margin: 15;
     }
 
+    .playerZone:nth-child(odd) .playerName {
+        margin: 15px;
+    }
+
     .playerZone:nth-child(odd) .playerTotalScore {
-        margin-top: 5vh;
+        margin-top: 1vh;
     }
 
     .playerZone:nth-child(even) .playerTotalScore {
-        margin-bottom: 5vh;
+        margin-bottom: 3vh;
     }
 
     .playerZone:nth-child(odd) .playerCurrentScoreBox {
@@ -404,11 +407,11 @@ body {
     }
 
     .playerCurrentScoreTitle {
-        font-size: 2vw;
+        font-size: 5vw;
     }
 
     .playerCurrentScore {
-        font-size: 6vw;
+        font-size: 5vw;
     }
 
     .newGame {
