@@ -24,6 +24,24 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max)
 }
 
+
+/** Class Game */
+class Player {
+    constructor(name) {
+        this.name = name
+        this.currentScore = 0
+        this.totalScore = 0
+    }
+}
+class Dice {
+    rollDice() {
+        this.oldFace = this.myCurrentFace
+        //random +1 for have a number 1 to 6
+        this.myCurrentFace = getRandomInt(6) + 1
+
+    }
+}
+
 // Construct Object fo manage my roll dice's Game.
 class ManageGame {
 
