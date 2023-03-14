@@ -68,16 +68,87 @@ class ManageGame {
 
     }
      // Reset Game 
+    onNewClick(){
+        ManageGame.getNewGame()
+        document.getElementById('scorePlayer2').innerText = this.currentPlayer.currentScore = 0
+        document.getElementById('scorePlayer1').innerText = this.currentPlayer.currentScore = 0
+        document.getElementById('currentScore1').innerText = this.currentPlayer.currentScore = 0
+        document.getElementById('currentScore2').innerText = this.currentPlayer.currentScore = 0
+        document.getElementById(this.playerZone).classList.remove('confetti')
+        document.getElementById('playerWinner' + this.player).innerText = null
+        document.getElementById(this.playerWinner).style.display = null
+        document.getElementById('currentScoreBox' + this.player).style.display = null
+    }
+
+
+// When I click on the dice
+onDiceClick() {
+    this.myDice.rollDice()
+    //once the dice on 1, he switch player.
+    if (this.myDice.myCurrentFace === 1) {
+        this.changeDice()
+        this.players[this.currentUser].currentScore = 0
+        document.getElementById('currentScore' + this.player).innerText = this.currentPlayer.currentScore
+        this.changeUser()
+
+    }
+    else {
+    // if the dice is not 1, it continues to play and adds the currentScore
+        this.players[this.currentUser].currentScore = this.players[this.currentUser].currentScore + this.myDice.myCurrentFace
+        this.player1 = this.players[0]
+        this.player2 = this.players[1]
+        this.currentPlayer = this.players[this.currentUser]
+
+
+
+        document.getElementById('currentScore' + this.player).innerText = this.currentPlayer.currentScore
+
+        document.getElementById('playerName' + this.player).innerText = this.currentPlayer.name
+        this.changeDice()
+
+        }
+        console.log('totalScore %s', this.players[this.currentUser].totalScore
+        )
+    }
+    
+// when I click hold; add score in total score, and if the score is > or = then it sets up PlayerWinner and puts confetti
+    onHoldClick() {
+        this.players[this.currentUser].totalScore = this.players[this.currentUser].totalScore + this.players[this.currentUser].currentScore
+        this.players[this.currentUser].currentScore = 0
+        this.changeTotalScore()
+        if (this.players[this.currentUser].totalScore >= this.scoreMax) {
+            document.getElementById(this.playerZone).classList.add('confetti')
+            document.getElementById(this.playerWinner).style.display = 'block'
+            document.getElementById('currentScoreBox' + this.player).style.display = 'none'
+            document.getElementById('playerWinner' + this.player).innerText = this.players[this.currentUser].name + ' a gagné'
+
+        }
+        else
+            this.changeUser()
+    }
+    
+
+    //sets up the active player
+
+    changeUser(){
+        document.getElementById(this.playerZone).classList.remove('active')
+
+        if (this.currentUser === 0)
+            this.currentUser = 1
+        else this.currentUser = 0
+        this.player = this.currentUser + 1
+        this.scoreId = 'scorePlayer' + this.player
+        this.playerZone = 'playerZone' + this.player
+        this.playerWinner = 'playerWinner' + this.player
+
+        document.getElementById(this.playerZone).classList.add('active')
+    }
+
+    changeTotalScore() {
+        document.getElementById(this.scoreId).innerText = this.players[this.currentUser].totalScore
+    }
 
 }
-
-
-
-
-
-
-
-
 
 
 
