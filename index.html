@@ -65,9 +65,9 @@
 
 <!-- NewGame & Hold Links -->
 <!-- Put JS here -->
-<a class="newGame" href="">New Game</a> 
+<a class="newGame" href="javascript: ManageGame.getNewGame().onNewClick()">New Game</a> 
 <!-- Put JS here -->
-<a class="hold" href="">Hold</a>
+<a class="hold" href="javascript: ManageGame.getNewGame().onHoldClick()">Hold</a>
 
 <!-- Modal & Game Rules -->
     <div class="overlay"></div>
@@ -90,7 +90,7 @@
 <!-- Dice & Roll part -->
 
 <!-- Put JS here -->
-        <div class="dice">
+        <div class="dice" onclick="ManageGame.getNewGame().onDiceClick()" style="display: block; cursor: pointer;">
             <span class="tooltiptext">Click to roll me !</span>
             <div class="cube">
                 <div class="face one" id="diceImage"></div>

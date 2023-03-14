@@ -55,8 +55,8 @@ class ManageGame {
     scoreMax = 100
 
     //game's principal class
-    static getNewgame(){
-        if(ManageGame.myGame === null) 
+    static getNewGame() {
+        if (ManageGame.myGame === null)
             ManageGame.myGame = new ManageGame()
         return ManageGame.myGame
     }
@@ -98,6 +98,7 @@ onDiceClick() {
         this.player1 = this.players[0]
         this.player2 = this.players[1]
         this.currentPlayer = this.players[this.currentUser]
+
         document.getElementById('currentScore' + this.player).innerText = this.currentPlayer.currentScore
 
         document.getElementById('playerName' + this.player).innerText = this.currentPlayer.name
