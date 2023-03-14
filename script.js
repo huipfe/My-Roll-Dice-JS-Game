@@ -98,9 +98,6 @@ onDiceClick() {
         this.player1 = this.players[0]
         this.player2 = this.players[1]
         this.currentPlayer = this.players[this.currentUser]
-
-
-
         document.getElementById('currentScore' + this.player).innerText = this.currentPlayer.currentScore
 
         document.getElementById('playerName' + this.player).innerText = this.currentPlayer.name
@@ -148,12 +145,29 @@ onDiceClick() {
         document.getElementById(this.scoreId).innerText = this.players[this.currentUser].totalScore
     }
 
+    // but in place the random image of dice
+    changeDice() {
+        document.getElementById('diceImage').classList.remove(this.getMyClassName(this.myDice.oldFace))
+        document.getElementById('diceImage').classList.add(this.getMyClassName(this.myDice.myCurrentFace))
+
+    }
+
+    //sets the images in relation to the random
+    getMyClassName(myNumberOfDice) {
+        if (myNumberOfDice === 1)
+            return 'one'
+        if (myNumberOfDice === 2)
+            return 'two'
+        if (myNumberOfDice === 3)
+            return 'three'
+        if (myNumberOfDice === 4)
+            return 'four'
+        if (myNumberOfDice === 5)
+            return 'five'
+        if (myNumberOfDice === 6)
+            return 'six'
+    }
 }
-
-
-
-
-
 
 /** Modal option */
 const btnCloseModal = document.querySelector('.closeModal')
