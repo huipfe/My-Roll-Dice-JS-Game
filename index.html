@@ -41,7 +41,7 @@
     
     
     <div class="playerActuelScoreBox" id="currentScoreBox1">
-        <p class="playerActuelScoreTitle text-light">Current Score</p>
+        <p class="playerActuelScoreTitle ">Current Score</p>
         <p class="playerActuelScore" id="currentScore1">0</p>
     </div>
 
@@ -55,7 +55,7 @@
         <p id="playerWinner2" class="playerWinner blink">You Win</p>
     
     <div class="playerActuelScoreBox" id="currentScoreBox2">
-        <p class="playerActuelScoreTitle text-light">Current Score</p>
+        <p class="playerActuelScoreTitle ">Current Score</p>
         <p class="playerActuelScore" id="currentScore2">0</p>
     </div>
 
@@ -71,7 +71,7 @@
 
 <!-- Modal & Game Rules -->
     <div class="overlay"></div>
-    <div class="modal">
+    <div class="modal text-bg-light text-light text-white">
         <h1>Game's Rule</h1>
         <p>Rule are simple. Click on the button <cite>NEW GAME</cite> for launch a new game</p>
         <p>One of the two players is automatically selected to start the game. The player who has a blinking dot to the right of
@@ -109,12 +109,35 @@
         </script>
     
     <!-- jQuery distant -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.js"
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
     
     <!-- Local Script -->
     <script src="script.js"></script>
+
+<script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+
+<script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@<version>/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@<version>/examples/jsm/"
+    }
+  }
+</script>
+
+<script type="module">
+
+    import * as THREE from 'three';
+    import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+    const controls = new OrbitControls(camera, renderer.domElement);
+
+</script>
+
+
+
     </body>
     
     </html>

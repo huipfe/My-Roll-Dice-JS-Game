@@ -78,36 +78,37 @@ class ManageGame {
         document.getElementById('playerWinner' + this.player).innerText = null
         document.getElementById(this.playerWinner).style.display = null
         document.getElementById('currentScoreBox' + this.player).style.display = null
+
+
     }
 
 
 // When I click on the dice
-onDiceClick() {
-    this.myDice.rollDice()
-    //once the dice on 1, he switch player.
-    if (this.myDice.myCurrentFace === 1) {
-        this.changeDice()
-        this.players[this.currentUser].currentScore = 0
-        document.getElementById('currentScore' + this.player).innerText = this.currentPlayer.currentScore
-        this.changeUser()
+    onDiceClick() {
+        this.myDice.rollDice()
 
-    }
-    else {
-    // if the dice is not 1, it continues to play and adds the currentScore
-        this.players[this.currentUser].currentScore = this.players[this.currentUser].currentScore + this.myDice.myCurrentFace
-        this.player1 = this.players[0]
-        this.player2 = this.players[1]
-        this.currentPlayer = this.players[this.currentUser]
-
-        document.getElementById('currentScore' + this.player).innerText = this.currentPlayer.currentScore
-
-        document.getElementById('playerName' + this.player).innerText = this.currentPlayer.name
-        this.changeDice()
-
+        if (this.players[this.currentUser].totalScore >= this.scoreMax) {
+            // if total score is already greater than or equal to scoreMax, skip adding current score
+            this.changeDice()
         }
-        console.log('totalScore %s', this.players[this.currentUser].totalScore
-        )
+        else if (this.myDice.myCurrentFace === 1) {
+            this.changeDice()
+            this.players[this.currentUser].currentScore = 0
+            document.getElementById('currentScore' + this.player).innerText = this.currentPlayer.currentScore
+            this.changeUser()
+        }
+        else {
+            this.players[this.currentUser].currentScore += this.myDice.myCurrentFace
+            this.player1 = this.players[0]
+            this.player2 = this.players[1]
+            this.currentPlayer = this.players[this.currentUser]
+            document.getElementById('currentScore' + this.player).innerText = this.currentPlayer.currentScore
+            document.getElementById('playerName' + this.player).innerText = this.currentPlayer.name
+            this.changeDice()
+        }
     }
+
+
     
 // when I click hold; add score in total score, and if the score is > or = then it sets up PlayerWinner and puts confetti
     onHoldClick() {
@@ -170,6 +171,25 @@ onDiceClick() {
     }
 }
 
+// Block score to 100
+let score = 0;
+
+function increaseScore() {
+    score += 10;
+    if (score > 100) {
+        score = 100;
+    }
+}
+
+function decreaseScore() {
+    score -= 10;
+    if (score < 0) {
+        score = 0;
+    }
+}
+
+
+
 /** Modal option */
 const btnCloseModal = document.querySelector('.closeModal')
 const overlay = document.querySelector('.overlay')
@@ -180,3 +200,8 @@ function closeModal(){
     overlay.style.display = "none"
 }
 btnCloseModal.addEventListener('click', closeModal)
+
+
+// Test 3D
+
+
