@@ -63,6 +63,104 @@
 
 </div>
 
+<!-- Dice & Roll part -->
+<div class="dice" onclick="ManageGame.getNewGame().onDiceClick()" style="display: block; cursor: pointer;">
+    <span class="tooltiptext">Click to roll me !</span>
+    <div class="cube">
+        <div class="face one" id="diceImage"></div>
+    </div>
+
+    <!-- <div class="face">
+        <div class="face two" id=""></div>
+    </div>
+    <div class="cube">
+        <div class="face three" id=""></div>
+    </div>
+    <div class="cube">
+        <div class="face four" id=""></div>
+    </div>
+    <div class="cube">
+        <div class="face five" id=""></div>
+    </div>
+    <div class="cube">
+        <div class="face six" id=""></div>
+    </div> -->
+</div>
+
+<div class="dice" onclick="ManageGame.getNewGame().onDiceClick()">
+    <ol class="die-list even-roll" data-roll="1" id="die-1">
+        <li class="die-item" data-side="1">
+            <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="2">
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="3">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="4">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="5">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="6">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </li>
+    </ol>
+    <ol class="die-list odd-roll" data-roll="1" id="die-2">
+        <li class="die-item" data-side="1">
+            <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="2">
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="3">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="4">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="5">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="6">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </li>
+    </ol>
+</div>
+<button type="button" id="roll-button">Roll Dice</button>
+
 <!-- NewGame & Hold Links -->
 <!-- Put JS here -->
 <a class="newGame" href="javascript: ManageGame.getNewGame().onNewClick()">New Game</a> 
@@ -87,16 +185,12 @@
     <button class="closeModal">Closed</button> 
     </div>
     
-<!-- Dice & Roll part -->
-        <div class="dice" onclick="ManageGame.getNewGame().onDiceClick()" style="display: block; cursor: pointer;">
-            <span class="tooltiptext">Click to roll me !</span>
-            <div class="cube">
-                <div class="face one" id="diceImage"></div>
-        
-            </div>
-        </div>
+
 
 </main>
+
+
+
 
 
     <!-- Bootstrap JavaScript Libraries -->
@@ -116,25 +210,7 @@
     <!-- Local Script -->
     <script src="script.js"></script>
 
-<script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
 
-<script type="importmap">
-  {
-    "imports": {
-      "three": "https://unpkg.com/three@<version>/build/three.module.js",
-      "three/addons/": "https://unpkg.com/three@<version>/examples/jsm/"
-    }
-  }
-</script>
-
-<script type="module">
-
-    import * as THREE from 'three';
-    import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-
-    const controls = new OrbitControls(camera, renderer.domElement);
-
-</script>
 
 
 
