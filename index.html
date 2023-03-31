@@ -31,7 +31,7 @@
 <main class="container g-0">
 
     <!-- Player One -->
-    <div class="container   g-0" id="diceRollerContainer">
+    <div class="container g-0" id="diceRollerContainer">
 
 
     <div class="playerZone active" id="playerZone1">
@@ -75,10 +75,10 @@
 
 
 <!-- NewGame & Hold Links -->
-<!-- Put JS here -->
-<a class="newGame" id="newGameButton" href="javascript: ManageGame.getNewGame().onNewClick()">New Game</a> 
-<!-- Put JS here -->
-<a class="hold" href="javascript: ManageGame.getNewGame().onHoldClick()">Hold</a>
+<!-- Put JS here : href="javascript: ManageGame.getNewGame().onNewClick()" -->
+<a class="newGame" id="newGameButton" onclick="ManageGame.getNewGame().onNewClick()" >New Game</a>  
+<!-- Put JS here : href="javascript: ManageGame.getNewGame().onHoldClick()" -->
+<a class="hold" id="myHoldButton" onclick="ManageGame.getNewGame().onHoldClick()" >Hold</a>
 
 <!-- Modal & Game Rules -->
     <div class="overlay"></div>
