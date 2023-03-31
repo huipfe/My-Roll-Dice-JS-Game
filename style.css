@@ -544,7 +544,7 @@ body {
 
 /* Other 3D Test */
 
-.dice {
+/* .dice {
   align-items: center;
   display: grid;
   grid-gap: 2rem;
@@ -732,4 +732,4 @@ button:hover {
   .dice {
     perspective: 1300px;
   }
-}
+} */
