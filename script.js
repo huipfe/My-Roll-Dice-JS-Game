@@ -55,6 +55,37 @@ class ManageGame {
     playerWinner = 'playerWinner1'
     scoreMax = 100
 
+
+    resetGame() {
+        this.players.forEach(player => {
+            player.currentScore = 0;
+            player.totalScore = 0;
+        });
+
+        this.currentUser = 0;
+        this.player = 1;
+        this.scoreId = 'scorePlayer1';
+        this.playerZone1 = 'playerZone1';
+        this.playerZone2 = 'playerZone2';
+        this.playerWinner1 = 'playerWinner1';
+        this.playerWinner2 = 'playerWinner2';
+        this.scoreMax = 100;
+
+        document.getElementById('scorePlayer1').innerText = 0;
+        document.getElementById('scorePlayer2').innerText = 0;
+        document.getElementById('currentScore1').innerText = 0;
+        document.getElementById('currentScore2').innerText = 0;
+        document.getElementById('playerName1').innerText = this.players[0].name;
+        document.getElementById('playerName2').innerText = this.players[1].name;
+        document.getElementById(this.playerZone1).classList.remove('confetti');
+        document.getElementById(this.playerZone2).classList.remove('confetti');
+        document.getElementById(this.playerWinner1).style.display = 'none';
+        document.getElementById(this.playerWinner2).style.display = 'none';
+        document.getElementById('currentScoreBox1').style.display = 'block';
+        document.getElementById('currentScoreBox2').style.display = 'none';
+    }
+
+
     //game's principal class
     static getNewGame() {
         if (ManageGame.myGame === null)
@@ -126,7 +157,7 @@ class ManageGame {
             document.getElementById(this.playerZone).classList.add('confetti')
             document.getElementById(this.playerWinner).style.display = 'block'
             document.getElementById('currentScoreBox' + this.player).style.display = 'none'
-            document.getElementById('playerWinner' + this.player).innerText = this.players[this.currentUser].name + ' a gagné'
+            document.getElementById('playerWinner' + this.player).innerText = this.players[this.currentUser].name + ' has won !'
 
         }
         else
@@ -181,7 +212,10 @@ class ManageGame {
     }
 }
 
-
+// add event listener to "New Game" button
+document.getElementById('newGameButton').addEventListener('click', () => {
+    ManageGame.getNewGame().resetGame();
+});
 
 /** Modal option */
 const btnCloseModal = document.querySelector('.closeModal')
