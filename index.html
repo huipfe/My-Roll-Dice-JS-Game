@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="style.css">
 
     <!-- Bootstrap CSS v5.2.1 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
     <!-- Lato Font --> <!-- https://fonts.google.com/specimen/Lato -->
@@ -31,7 +31,7 @@
 <main class="container g-0">
 
     <!-- Player One -->
-    <div class="container g-0" id="diceRollerContainer">
+    <div class="container   g-0" id="diceRollerContainer">
 
 
     <div class="playerZone active" id="playerZone1">
@@ -49,8 +49,9 @@
 
 
 <!-- Player Two -->
+
 <div class="playerZone" id="playerZone2">  
-        <p class="playerName mb-md-3 mb-lg-5 my-5" id="playerName2">Player 2</p>
+        <p class="playerName mb-md-3 mb-lg-5" id="playerName2">Player 2</p>
         <p class="playerTotalScore" id="scorePlayer2">0</p>
         <p id="playerWinner2" class="playerWinner blink">You Win</p>
     
@@ -63,103 +64,15 @@
 
 </div>
 
+
 <!-- Dice & Roll part -->
-<div class="dice" onclick="ManageGame.getNewGame().onDiceClick()" style="display: block; cursor: pointer;">
+<div class="dice" onclick="ManageGame.getNewGame().onDiceClick()">
     <span class="tooltiptext">Click to roll me !</span>
     <div class="cube">
         <div class="face one" id="diceImage"></div>
     </div>
-
-    <!-- <div class="face">
-        <div class="face two" id=""></div>
-    </div>
-    <div class="cube">
-        <div class="face three" id=""></div>
-    </div>
-    <div class="cube">
-        <div class="face four" id=""></div>
-    </div>
-    <div class="cube">
-        <div class="face five" id=""></div>
-    </div>
-    <div class="cube">
-        <div class="face six" id=""></div>
-    </div> -->
 </div>
 
-<!-- <div class="dice" onclick="ManageGame.getNewGame().onDiceClick()">
-    <ol class="die-list even-roll" data-roll="1" id="die-1">
-        <li class="die-item" data-side="1">
-            <span class="dot"></span>
-        </li>
-        <li class="die-item" data-side="2">
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </li>
-        <li class="die-item" data-side="3">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </li>
-        <li class="die-item" data-side="4">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </li>
-        <li class="die-item" data-side="5">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </li>
-        <li class="die-item" data-side="6">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </li>
-    </ol>
-    <ol class="die-list odd-roll" data-roll="1" id="die-2">
-        <li class="die-item" data-side="1">
-            <span class="dot"></span>
-        </li>
-        <li class="die-item" data-side="2">
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </li>
-        <li class="die-item" data-side="3">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </li>
-        <li class="die-item" data-side="4">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </li>
-        <li class="die-item" data-side="5">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </li>
-        <li class="die-item" data-side="6">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </li>
-    </ol>
-</div>
-<button  type="button" id="roll-button">Roll Dice</button> -->
 
 <!-- NewGame & Hold Links -->
 <!-- Put JS here -->
@@ -171,7 +84,7 @@
     <div class="overlay"></div>
     <div class="modal text-bg-light text-light text-white">
         <h1>Game's Rule</h1>
-        <p>Rule are simple. Click on the button<cite>NEW GAME</cite>for launch a new game</p>
+        <p>Rule are simple. Click on the button<cite> NEW GAME </cite>for launch a new game</p>
         <p>One of the two players is automatically selected to start the game. The player who has a blinking dot to the right of
         his name will start.</p>
         <p>Launch the Dice by clicking on it. Once its spins are complete, the number of points displayed will be the score
@@ -208,8 +121,6 @@
     
     <!-- Local Script -->
     <script src="script.js"></script>
-
-
 
 
 

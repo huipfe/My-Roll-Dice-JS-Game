@@ -33,6 +33,7 @@ class Player {
         this.totalScore = 0
     }
 }
+
 class Dice {
     rollDice() {
         this.oldFace = this.myCurrentFace
@@ -59,17 +60,17 @@ class ManageGame {
         if (ManageGame.myGame === null)
             ManageGame.myGame = new ManageGame()
         return ManageGame.myGame
-    }
-    constructor () {
-        this.players = []
-        this.players.push(new Player('Player 1'))
-        this.players.push(new Player('Player 2'))
-        this.myDice = new Dice()
 
+    }
+    constructor() {
+        this.players = []
+        this.players.push(new Player('Joueur 1'))
+        this.players.push(new Player('Joueur 2'))
+        this.myDice = new Dice()
     }
 
     //  Reset Game 
-    onNewClick(){
+    onNewClick() {
         ManageGame.getNewGame()
         document.getElementById('scorePlayer2').innerText = this.currentPlayer.currentScore = 0
         document.getElementById('scorePlayer1').innerText = this.currentPlayer.currentScore = 0
@@ -84,38 +85,40 @@ class ManageGame {
 
     
 // When I click on the dice
-onDiceClick() {
-  this.myDice.rollDice();
-  
-  if (this.players[this.currentUser].totalScore >= this.scoreMax) {
-    // if total score is already greater than or equal to scoreMax, skip adding current score
-    this.changeDice();
-  }
-  else if (this.myDice.myCurrentFace === 1) {
-    this.changeDice();
-    this.players[this.currentUser].currentScore = 0;
-    document.getElementById('currentScore' + this.player).innerText = this.currentPlayer.currentScore;
-    this.changeUser();
-  }
-  else {
-    this.players[this.currentUser].currentScore += this.myDice.myCurrentFace;
-    this.currentPlayer = this.players[this.currentUser];
-    document.getElementById('currentScore' + this.player).innerText = this.currentPlayer.currentScore;
-    document.getElementById('playerName' + this.player).innerText = this.currentPlayer.name;
-    this.changeDice();
-    
-    if (this.currentPlayer.totalScore + this.currentPlayer.currentScore >= this.scoreMax) {
-      // if adding current score brings total score greater than or equal to scoreMax, hold automatically
-      this.onHoldClick();
+    onDiceClick() {
+        this.myDice.rollDice()
+        //once the dice on 1, he switch player.
+        if (this.myDice.myCurrentFace === 1) {
+            this.changeDice()
+            this.players[this.currentUser].currentScore = 0
+            document.getElementById('currentScore' + this.player).innerText = this.currentPlayer.currentScore
+            this.changeUser()
+
+        }
+        else {
+            // if the dice is not 1, it continues to play and adds the currentScore
+            this.players[this.currentUser].currentScore = this.players[this.currentUser].currentScore + this.myDice.myCurrentFace
+            this.player1 = this.players[0]
+            this.player2 = this.players[1]
+            this.currentPlayer = this.players[this.currentUser]
+
+
+
+            document.getElementById('currentScore' + this.player).innerText = this.currentPlayer.currentScore
+
+            document.getElementById('playerName' + this.player).innerText = this.currentPlayer.name
+            this.changeDice()
+
+        }
+        console.log('totalScore %s', this.players[this.currentUser].totalScore
+        )
     }
-  }
-}
-
 
 
     
-// when I click hold; add score in total score, and if the score is > or = then it sets up PlayerWinner and puts confetti
+    // when I click hold; add score in total score, and if the score is > or = then it sets up PlayerWinner and puts confetti
     onHoldClick() {
+
         this.players[this.currentUser].totalScore = this.players[this.currentUser].totalScore + this.players[this.currentUser].currentScore
         this.players[this.currentUser].currentScore = 0
         this.changeTotalScore()
@@ -123,17 +126,18 @@ onDiceClick() {
             document.getElementById(this.playerZone).classList.add('confetti')
             document.getElementById(this.playerWinner).style.display = 'block'
             document.getElementById('currentScoreBox' + this.player).style.display = 'none'
-            document.getElementById('playerWinner' + this.player).innerText = this.players[this.currentUser].name + ' has won'
+            document.getElementById('playerWinner' + this.player).innerText = this.players[this.currentUser].name + ' a gagné'
 
         }
         else
             this.changeUser()
+
+
     }
-    
 
-    //sets up the active player
 
-    changeUser(){
+
+    changeUser() {
         document.getElementById(this.playerZone).classList.remove('active')
 
         if (this.currentUser === 0)
@@ -145,6 +149,7 @@ onDiceClick() {
         this.playerWinner = 'playerWinner' + this.player
 
         document.getElementById(this.playerZone).classList.add('active')
+
     }
 
     changeTotalScore() {
@@ -157,6 +162,7 @@ onDiceClick() {
         document.getElementById('diceImage').classList.add(this.getMyClassName(this.myDice.myCurrentFace))
 
     }
+
 
     //sets the images in relation to the random
     getMyClassName(myNumberOfDice) {
@@ -175,25 +181,6 @@ onDiceClick() {
     }
 }
 
-// Block score to 100
-let score = 0;
-
-function increaseScore() {
-    score += 10;
-    if (score > 100) {
-        score = 100;
-    }
-}
-
-function decreaseScore() {
-    score -= 10;
-    if (score < 0) {
-        score = 0;
-    }
-
-    let score = 0;
-}
-
 
 
 /** Modal option */
@@ -208,26 +195,3 @@ function closeModal(){
 btnCloseModal.addEventListener('click', closeModal)
 
 
-// Test 3D
-
-
-// function rollDice() {
-//     const dice = [...document.querySelectorAll(".die-list")];
-//     dice.forEach(die => {
-//         toggleClasses(die);
-//         die.dataset.roll = getRandomNumber(1, 6);
-//     });
-// }
-
-// function toggleClasses(die) {
-//     die.classList.toggle("odd-roll");
-//     die.classList.toggle("even-roll");
-// }
-
-// function getRandomNumber(min, max) {
-//     min = Math.ceil(min);
-//     max = Math.floor(max);
-//     return Math.floor(Math.random() * (max - min + 1)) + min;
-// }
-
-// document.getElementById("roll-button").addEventListener("click", rollDice);
