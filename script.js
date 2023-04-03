@@ -338,3 +338,38 @@ function closeModal(){
 btnCloseModal.addEventListener('click', closeModal)
 
 
+/** Rules no modal */
+
+document.querySelector('.btn-rules').addEventListener('click', function () {
+    var games = document.getElementsByClassName('game-panel');
+    for (i = 0; i < games.length; i++) {
+        games[i].style.display = 'none';
+    }
+
+    document.querySelector('.btn-back').style.display = 'block';
+    var rules = document.getElementsByClassName('rules-panel');
+    for (i = 0; i < rules.length; i++) {
+        rules[i].style.display = 'block';
+    }
+
+});
+
+document.querySelector('.btn-back').addEventListener('click', function () {
+    var games = document.getElementsByClassName('game-panel');
+    for (i = 0; i < games.length; i++) {
+        games[i].style.display = 'block';
+    }
+
+    document.querySelector('.btn-back').style.display = 'none';
+    var rules = document.getElementsByClassName('rules-panel');
+    for (i = 0; i < rules.length; i++) {
+        rules[i].style.display = 'none';
+    }
+
+});
+
+function disableBtn(btn, time) {
+    //disable button
+    btn.disabled = true;
+    setTimeout(function () { btn.disabled = false; }, time);
+}
