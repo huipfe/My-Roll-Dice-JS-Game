@@ -205,6 +205,10 @@ background-position: top left;
     cursor: pointer;
 }
 
+/* .hold.disabled {
+pointer-events: none;
+} */
+
 .hold:hover,
 .newGame:hover,
 .rules:hover {

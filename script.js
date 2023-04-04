@@ -57,6 +57,7 @@ class ManageGame {
 
 
     resetGame() {
+          // Réinitialiser les valeurs du jeu
         this.players.forEach(player => {
             player.currentScore = 0;
             player.totalScore = 0;
@@ -71,6 +72,12 @@ class ManageGame {
         this.playerWinner2 = 'playerWinner2';
         this.scoreMax = 100;
 
+        // Réactiver le bouton Hold
+        document.getElementById('myHoldButton').onclick = () => {
+            ManageGame.getNewGame().onHoldClick();
+        };
+
+        // Réinitialiser les éléments HTML
         document.getElementById('scorePlayer1').innerText = 0;
         document.getElementById('scorePlayer2').innerText = 0;
         document.getElementById('currentScore1').innerText = 0;
@@ -83,6 +90,12 @@ class ManageGame {
         document.getElementById(this.playerWinner2).style.display = 'none';
         document.getElementById('currentScoreBox1').style.display = 'block';
         document.getElementById('currentScoreBox2').style.display = 'block';
+        // document.getElementById('myHoldButton').classList.remove('disabled');
+        // document.getElementById('myHoldButton').addEventListener('click', ManageGame.getNewGame().onHoldClick());
+        // document.getElementById('newGameButton').addEventListener('click', () => {
+        //     ManageGame.getNewGame().onHoldClick();
+        // });
+        // document.getElementById('myHoldButton').addEventListener.onclick = ManageGame.getNewGame().onHoldClick;
     }
 
 
@@ -151,63 +164,8 @@ class ManageGame {
 
     
     // when I click hold; add score in total score, and if the score is > or = then it sets up PlayerWinner and puts confetti
-    // onHoldClick() {
-
-    //     this.players[this.currentUser].totalScore = this.players[this.currentUser].totalScore + this.players[this.currentUser].currentScore
-    //     this.players[this.currentUser].currentScore = 0
-    //     this.changeTotalScore()
-    //     if (this.players[this.currentUser].totalScore >= this.scoreMax) {
-    //         document.getElementById(this.playerZone).classList.add('confetti')
-    //         document.getElementById(this.playerWinner).style.display = 'block'
-    //         document.getElementById('currentScoreBox' + this.player).style.display = 'none'
-    //         document.getElementById('playerWinner' + this.player).innerText = this.players[this.currentUser].name + ' has won !'
-
-    //     }
-    //     else
-    //         this.changeUser()
-
-    // }
-
     // When I click hold; add score in total score, and if the score is > or = at 100 player win, else switch player
-    // onHoldClick() {
-    //     const currentPlayer = this.players[this.currentUser]
 
-    //     currentPlayer.totalScore += currentPlayer.currentScore
-    //     document.getElementById('scorePlayer' + this.player).innerText = currentPlayer.totalScore
-
-    //     if (currentPlayer.totalScore >= this.scoreMax) {
-    //         document.getElementById(this.playerZone).classList.add('confetti')
-    //         document.getElementById(this.playerWinner).style.display = 'block'
-    //         document.getElementById('currentScoreBox' + this.player).style.display = 'none'
-    //     } else {
-    //         currentPlayer.currentScore = 0
-    //         document.getElementById('currentScore' + this.player).innerText = currentPlayer.currentScore
-    //         this.changeUser()
-    //     }
-    // }
-
-
-    // onHoldClick() {
-
-    //     const currentPlayer = this.players[this.currentUser]
-
-    //     currentPlayer.totalScore += currentPlayer.currentScore
-    //     document.getElementById('scorePlayer' + this.player).innerText = currentPlayer.totalScore
-
-    //     if (currentPlayer.totalScore >= this.scoreMax) {
-    //         document.getElementById(this.playerZone).classList.add('confetti')
-    //         document.getElementById(this.playerWinner).style.display = 'block'
-    //         document.getElementById('currentScoreBox' + this.player).style.display = 'none'
-    //         document.getElementById('playerWinner' + this.player).innerText = this.players[this.currentUser].name + ' has won !'
-
-    //         // désactiver l'événement click une fois le score maximum atteint
-    //         document.getElementById('myHoldButton').removeEventListener('click', this.onHoldClick)
-    //     } else {
-    //         currentPlayer.currentScore = 0
-    //         document.getElementById('currentScore' + this.player).innerText = currentPlayer.currentScore
-    //         this.changeUser()
-    //     }
-    // }
 
     onHoldClick() {
         const currentPlayer = this.players[this.currentUser]
@@ -221,6 +179,9 @@ class ManageGame {
             document.getElementById('currentScoreBox' + this.player).style.display = 'none'
             document.getElementById('playerWinner' + this.player).innerText = this.players[this.currentUser].name + ' has won !'
             // document.getElementById('myHoldButton').removeEventListener('click', this.onHoldClick)
+            // document.getElementById('myHoldButton').disabled = true;
+            // document.getElementById('myHoldButton').classList.add('disabled');
+            document.getElementById('myHoldButton').onclick = null;
             return ;
         } 
         else {
@@ -229,54 +190,6 @@ class ManageGame {
             this.changeUser()
         }
     }
-
-
-    // onHoldClick() {
-    //     const currentPlayer = this.players[this.currentUser]
-
-    //     if (currentPlayer.totalScore >= this.scoreMax) {
-    //         // Player has already won, do nothing
-    //         return
-    //     }
-
-    //     currentPlayer.totalScore += currentPlayer.currentScore
-    //     document.getElementById('scorePlayer' + this.player).innerText = currentPlayer.totalScore
-
-    //     if (currentPlayer.totalScore >= this.scoreMax) {
-    //         document.getElementById(this.playerZone).classList.add('confetti')
-    //         document.getElementById(this.playerWinner).style.display = 'block'
-    //         document.getElementById('currentScoreBox' + this.player).style.display = 'none'
-    //     } else {
-    //         currentPlayer.currentScore = 0
-    //         document.getElementById('currentScore' + this.player).innerText = currentPlayer.currentScore
-    //         this.changeUser()
-    //     }
-    // }
-
-    // onHoldClick() {
-    //     const currentPlayer = this.players[this.currentUser];
-
-    //     if (currentPlayer.totalScore >= this.scoreMax) {
-    //         // Player has already won, do nothing
-    //         return;
-    //     }
-
-    //     currentPlayer.totalScore += currentPlayer.currentScore;
-    //     document.getElementById('totalScore' + this.player).innerText = currentPlayer.totalScore;
-    //     // currentPlayer.currentScore = 0;
-    //     // document.getElementById('currentScore' + this.player).innerText = 0;
-
-    //     if (currentPlayer.totalScore >= this.scoreMax) {
-    //         // Player has won, end the game
-    //         document.getElementById(this.playerWinner).style.display = 'block';
-    //         document.getElementById(this.playerZone).classList.add('confetti');
-    //         document.getElementById('currentScoreBox' + this.player).style.display = 'none';
-    //     } else {
-    //         // Switch to other player's turn
-    //         this.changeUser();
-    //     }
-    // }
-
 
     changeUser() {
         document.getElementById(this.playerZone).classList.remove('active')
