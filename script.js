@@ -3,7 +3,7 @@
 /** Function Game 
  * 1) Randomization/random function of roll of a dice game.
  * 2) Reset Game, Reinit, or begin a new game
- * 3) Click on dice, for change player
+ * 3) Click on hold, for change player
  * 4) Addition of score, hold, and if score >= to max, player winner, with win animation (css)
  * 5) change the user
  * 6) change total score
@@ -220,7 +220,8 @@ class ManageGame {
             document.getElementById(this.playerWinner).style.display = 'block'
             document.getElementById('currentScoreBox' + this.player).style.display = 'none'
             document.getElementById('playerWinner' + this.player).innerText = this.players[this.currentUser].name + ' has won !'
-            return;
+            // document.getElementById('myHoldButton').removeEventListener('click', this.onHoldClick)
+            return ;
         } 
         else {
             currentPlayer.currentScore = 0
