@@ -68,7 +68,7 @@
 
 
 <!-- Dice & Roll part -->
-<div class="dice" onclick="ManageGame.getNewGame().onDiceClick()">
+<div class="dice" id= "diceButton">
     <span class="tooltiptext">Click to roll me !</span>
     <div class="cube">
         <div class="face one" id="diceImage"></div>
@@ -78,9 +78,9 @@
 
 <!-- NewGame & Hold Links -->
 <!-- Put JS here : href="javascript: ManageGame.getNewGame().onNewClick()" -->
-<a class="newGame" id="newGameButton" onclick="ManageGame.getNewGame().onNewClick()" >New Game</a>  
+<a class="newGame" id="newGameButton">New Game</a>  
 <!-- Put JS here : href="javascript: ManageGame.getNewGame().onHoldClick()" -->
-<a class="hold" id="myHoldButton" onclick="ManageGame.getNewGame().onHoldClick()" >Hold</a>
+<a class="hold" id="myHoldButton" >Hold</a>
 
 <!-- Modal & Game Rules -->
     <div class="overlay"></div>

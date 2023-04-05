@@ -73,9 +73,9 @@ class ManageGame {
         this.scoreMax = 100;
 
         // Réactiver le bouton Hold
-        document.getElementById('myHoldButton').onclick = () => {
-            ManageGame.getNewGame().onHoldClick();
-        };
+        // document.getElementById('myHoldButton').onclick = () => {
+        //     ManageGame.getNewGame().onHoldClick();
+        // };
 
         // Réinitialiser les éléments HTML
         document.getElementById('scorePlayer1').innerText = 0;
@@ -181,7 +181,7 @@ class ManageGame {
             // document.getElementById('myHoldButton').removeEventListener('click', this.onHoldClick)
             // document.getElementById('myHoldButton').disabled = true;
             // document.getElementById('myHoldButton').classList.add('disabled');
-            document.getElementById('myHoldButton').onclick = null;
+            // document.getElementById('myHoldButton').onclick = null;
             return ;
         } 
         else {
@@ -235,9 +235,19 @@ class ManageGame {
     }
 }
 
-// add event listener to "New Game" button
+// event listener to "New Game" button
 document.getElementById('newGameButton').addEventListener('click', () => {
     ManageGame.getNewGame().resetGame();
+});
+
+// add event listener to "Hold" button
+document.getElementById('myHoldButton').addEventListener('click', () => {
+    ManageGame.getNewGame().onHoldClick();
+});
+
+// add event listener to "dice" button
+document.getElementById('diceButton').addEventListener('click', () => {
+    ManageGame.getNewGame().onDiceClick();
 });
 
 /** Modal option */
