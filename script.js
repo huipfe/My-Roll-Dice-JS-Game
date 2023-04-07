@@ -18,7 +18,6 @@
  * Class dice
 */
 
-
 // Random Dice
 function getRandomInt(max) {
     return Math.floor(Math.random() * max)
@@ -42,7 +41,6 @@ class Dice {
 
     }
 }
-
 // Construct Object fo manage my roll dice's Game.
 class ManageGame {
 
@@ -73,15 +71,6 @@ class ManageGame {
 
         // Réactiver le bouton Hold 
 
-        // document.getElementById('myHoldButton').addEventListener('click', this.onHoldClick);
-        // document.getElementById('myHoldButton').onclick = () => {
-        //     ManageGame.getNewGame().onHoldClick();
-        // };
-
-        // document.getElementById('myHoldButton').addEventListener('click', () => {
-        //     ManageGame.getNewGame().onHoldClick();
-        // });
-
         // Réactiver le bouton Hold - CSS Solution
         document.getElementById('myHoldButton').classList.remove('disabled');
 
@@ -98,12 +87,6 @@ class ManageGame {
         document.getElementById(this.playerWinner2).style.display = 'none';
         document.getElementById('currentScoreBox1').style.display = 'block';
         document.getElementById('currentScoreBox2').style.display = 'block';
-        // document.getElementById('myHoldButton').classList.remove('disabled');
-        // document.getElementById('myHoldButton').addEventListener('click', ManageGame.getNewGame().onHoldClick());
-        // document.getElementById('newGameButton').addEventListener('click', () => {
-        //     ManageGame.getNewGame().onHoldClick();
-        // });
-        // document.getElementById('myHoldButton').addEventListener.onclick = ManageGame.getNewGame().onHoldClick;
     }
 
 
@@ -120,21 +103,6 @@ class ManageGame {
         this.players.push(new Player('Player 2'))
         this.myDice = new Dice()
     }
-
-    //  Reset Game 
-    // onNewClick() {
-    //     ManageGame.getNewGame()
-    //     document.getElementById('scorePlayer2').innerText = this.currentPlayer.currentScore = 0
-    //     document.getElementById('scorePlayer1').innerText = this.currentPlayer.currentScore = 0
-    //     document.getElementById('currentScore1').innerText = this.currentPlayer.currentScore = 0
-    //     document.getElementById('currentScore2').innerText = this.currentPlayer.currentScore = 0
-    //     document.getElementById(this.playerZone).classList.remove('confetti')
-    //     document.getElementById('playerWinner' + this.player).innerText = null
-    //     document.getElementById(this.playerWinner).style.display = null
-    //     document.getElementById('currentScoreBox' + this.player).style.display = null
-
-    // }
-
     
 // When I click on the dice
     onDiceClick() {
@@ -160,16 +128,11 @@ class ManageGame {
             document.getElementById('playerName' + this.player).innerText = this.currentPlayer.name;
             this.changeDice();
 
-            if (this.currentPlayer.totalScore + this.currentPlayer.currentScore >= 100) {
-                this.currentPlayer.totalScore += this.currentPlayer.currentScore;
+            if (this.currentPlayer.totalScore + this.currentPlayer.currentScore >= this.scoreMax) {
                 document.getElementById('totalScore' + this.player).innerText = this.currentPlayer.totalScore;
             }
         }
-
-        // console.log('totalScore %s', this.players[this.currentUser].totalScore);
     }
-
-
 
 /**when I click hold; add score in total score, and if the score is > or = 100, then it sets up 
    * PlayerWinner and puts confetti, else switch player */
@@ -199,8 +162,6 @@ class ManageGame {
             this.changeUser();
         }
     }
-
-
 
     changeUser() {
         document.getElementById(this.playerZone).classList.remove('active')
@@ -246,7 +207,6 @@ class ManageGame {
     }
 }
 
-
 /** click on one of this three button for play */
 
 // event listener to "New Game" button
@@ -258,6 +218,8 @@ document.getElementById('newGameButton').addEventListener('click', () => {
 document.getElementById('myHoldButton').addEventListener('click', () => {
     ManageGame.getNewGame().onHoldClick();
 });
+
+
 
 // add event listener to "dice" button
 document.getElementById('diceButton').addEventListener('click', () => {
@@ -286,9 +248,11 @@ function OpenModal() {
 }
 btnOpenModal.addEventListener('click', OpenModal)
 
+
+// TODO
 /** A FAIRE - JS & HTML
  * Semie OK (css solution temporaire) - onHoldClick - Désac le button en removeEventListener et réac après via le resetGame (en remettant la fonction)
- * onDiceClick - Corriger la valeur de fin, quand on ajoute notre résultat final, avant d'atteindre 100, qui s'addition avec 100, au lieu d'atteindre 100 tout juste
+ * OK - onDiceClick - Corriger la valeur de fin, quand on ajoute notre résultat final, avant d'atteindre 100, qui s'addition avec 100, au lieu d'atteindre 100 tout juste
  * OK - En HTML : Modal & Game Rules, mieux faire (en utilisant Bootstrap ?) les règles, qu'elles soient plus claires.
  * OK - Ajout en HTML,CSS et JS, d'un bouton Rules, pour revoir la modal Game Rules.
  */
