@@ -11,9 +11,13 @@
         sans-serif;
 }
 
+
+
 /* Body of the page */
 html,
 body {
+
+
     position: relative;
     width: 100vw;
     height: 100vh;
@@ -23,11 +27,17 @@ body {
     font-size: 1.2rem;
     font-weight: 400px;
     opacity: 0.8;
-background-color: #D3DCE3;
-background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='800' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='88' y1='88' x2='0' y2='0'%3E%3Cstop offset='0' stop-color='%23736e60'/%3E%3Cstop offset='1' stop-color='%23bcb6a6'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='75' y1='76' x2='168' y2='160'%3E%3Cstop offset='0' stop-color='%23373b36'/%3E%3Cstop offset='0.09' stop-color='%23454944'/%3E%3Cstop offset='0.18' stop-color='%234e524d'/%3E%3Cstop offset='0.31' stop-color='%23555954'/%3E%3Cstop offset='0.44' stop-color='%235b5e5a'/%3E%3Cstop offset='0.59' stop-color='%235f635e'/%3E%3Cstop offset='0.75' stop-color='%23626661'/%3E%3Cstop offset='1' stop-color='%23646863'/%3E%3C/linearGradient%3E%3Cfilter id='c' x='0' y='0' width='200%25' height='200%25'%3E%3CfeGaussianBlur in='SourceGraphic' stdDeviation='12' /%3E%3C/filter%3E%3C/defs%3E%3Cpolygon fill='url(%23a)' points='0 174 0 0 174 0'/%3E%3Cpath fill='%23000' fill-opacity='.5' filter='url(%23c)' d='M121.8 174C59.2 153.1 0 174 0 174s63.5-73.8 87-94c24.4-20.9 87-80 87-80S107.9 104.4 121.8 174z'/%3E%3Cpath fill='url(%23b)' d='M142.7 142.7C59.2 142.7 0 174 0 174s42-66.3 74.9-99.3S174 0 174 0S142.7 62.6 142.7 142.7z'/%3E%3C/svg%3E");
-background-attachment: fixed;
-background-repeat: no-repeat;
-background-position: top left;
+
+    background-color: #D3DCE3;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='800' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='88' y1='88' x2='0' y2='0'%3E%3Cstop offset='0' stop-color='%23736e60'/%3E%3Cstop offset='1' stop-color='%23bcb6a6'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='75' y1='76' x2='168' y2='160'%3E%3Cstop offset='0' stop-color='%23373b36'/%3E%3Cstop offset='0.09' stop-color='%23454944'/%3E%3Cstop offset='0.18' stop-color='%234e524d'/%3E%3Cstop offset='0.31' stop-color='%23555954'/%3E%3Cstop offset='0.44' stop-color='%235b5e5a'/%3E%3Cstop offset='0.59' stop-color='%235f635e'/%3E%3Cstop offset='0.75' stop-color='%23626661'/%3E%3Cstop offset='1' stop-color='%23646863'/%3E%3C/linearGradient%3E%3Cfilter id='c' x='0' y='0' width='200%25' height='200%25'%3E%3CfeGaussianBlur in='SourceGraphic' stdDeviation='12' /%3E%3C/filter%3E%3C/defs%3E%3Cpolygon fill='url(%23a)' points='0 174 0 0 174 0'/%3E%3Cpath fill='%23000' fill-opacity='.5' filter='url(%23c)' d='M121.8 174C59.2 153.1 0 174 0 174s63.5-73.8 87-94c24.4-20.9 87-80 87-80S107.9 104.4 121.8 174z'/%3E%3Cpath fill='url(%23b)' d='M142.7 142.7C59.2 142.7 0 174 0 174s42-66.3 74.9-99.3S174 0 174 0S142.7 62.6 142.7 142.7z'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+
+body {
+    --Min-width-Perso: 470px;
+    --Min-height-Perso: 200px;
 }
 
 .container {
@@ -86,6 +96,7 @@ background-position: top left;
     font-size: 3vw;
     color: #000000;
 }
+
 
 /* Player Box */
 .playerActuelScoreBox {
@@ -199,7 +210,7 @@ background-position: top left;
 
 .newGame {
     top: 4.5vh;
-    font-size: 1.5vw;
+    font-size: 1.8vw;
     cursor: pointer;
 }
 
@@ -265,7 +276,7 @@ cursor: pointer;
     width: 120px;
     background-color: black;
     color: #fff;
-    font-size: 1vw;
+    font-size: 2vw;
     font-weight: bold;
     text-transform: lowercase;
     text-align: center;
@@ -378,6 +389,7 @@ cursor: pointer;
 
 /* Modal */
 .modal {
+    min-height: var(--Min-height-Perso);
     position: absolute;
     text-align: center;
     justify-content: center;
@@ -449,16 +461,15 @@ cursor: pointer;
 
     #playerName1 {
         font-size: 5vw;
-        margin-top: 5vh;
+        margin-top: 8vh;
 
     }
     #scorePlayer1 {
         font-size: 9vw;
-        margin-top: 5vh;
+        margin-top: 4vh;
     }
     #currentScoreBox1 {
         margin-bottom: 10vh;
-        margin-top: 10vh;
     }
     #currentScore1 {
         font-size: 5vw;
@@ -472,7 +483,7 @@ cursor: pointer;
     
     #playerName2 {
         font-size: 5vw;
-        margin-top: 5vh;
+        margin-top: 8vh;
 
     }
     #scorePlayer2 {
@@ -480,7 +491,7 @@ cursor: pointer;
         margin-top: 1vh;
     }
     #currentScoreBox2 {
-        margin-top: 10vh;
+        margin-top: 7vh;
     }
     #currentScore2 {
         font-size: 5vw;
@@ -549,8 +560,10 @@ cursor: pointer;
         font-size: 5vw;
     }
 
-        .rules {
-        display: none;
+    .rules {
+        /* display: none; */
+        top: 0.5vw;
+        font-size: 5vw;
     }
 
 }

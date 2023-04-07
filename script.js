@@ -138,6 +138,9 @@ class ManageGame {
    * PlayerWinner and puts confetti, else switch player */
 
     onHoldClick() {
+
+        let myHoldButton = document.querySelector('#myHoldButton')
+
         const currentPlayer = this.players[this.currentUser];
 
         currentPlayer.totalScore += currentPlayer.currentScore;
@@ -151,10 +154,10 @@ class ManageGame {
             document.getElementById('playerWinner' + this.player).innerText = this.players[this.currentUser].name + ' has won !';
 
             // Désactiver l'événement "click" du bouton
-            // document.getElementById('myHoldButton').removeEventListener('click', onHoldClick);
+            // myHoldButton.removeEventListener('click', this.onHoldClick);
 
             // Disable the Hold button - CSS Solution
-            document.getElementById('myHoldButton').classList.add('disabled');
+            myHoldButton.classList.add('disabled');
             
         } else {
             currentPlayer.currentScore = 0;
@@ -256,3 +259,7 @@ btnOpenModal.addEventListener('click', OpenModal)
  * OK - En HTML : Modal & Game Rules, mieux faire (en utilisant Bootstrap ?) les règles, qu'elles soient plus claires.
  * OK - Ajout en HTML,CSS et JS, d'un bouton Rules, pour revoir la modal Game Rules.
  */
+
+
+
+
