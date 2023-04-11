@@ -395,6 +395,7 @@ cursor: pointer;
 }
 
 /* Modal */
+
 .modal {
     min-height: var(--Min-height-Perso);
     position: absolute;
@@ -430,6 +431,46 @@ cursor: pointer;
 
 }
 
+.btn-modal {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-size: 1rem;
+    margin: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+@media screen and (max-width: 1100px) {
+    .btn-modal {
+    font-size: 0.8rem;
+    padding: 6px 9px;
+    }
+}
+
+
+@media screen and (max-width: 768px) and (min-width: 576px) {
+    .btn-modal {
+    font-size: 0.5rem;
+    padding: 3px 5px;
+    }
+}
+
+@media screen and (max-width: 576px) and (min-width: 450px) {
+    .btn-modal {
+    font-size: 0.4rem;
+    padding: 3px 8px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .btn-modal {
+    font-size: 0.2rem;
+    padding: 1px 4px;
+    }
+}
 /* Animation */
 @keyframes blink {
     0% {
