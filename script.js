@@ -106,7 +106,39 @@ class ManageGame {
     
 
 // When I click on the dice
+    // onDiceClick() {
+    //     const currentPlayer = this.players[this.currentUser];
+
+    //     if (currentPlayer.totalScore >= this.scoreMax) {
+    //         return;
+    //     }
+
+    //     this.myDice.rollDice();
+
+    //     const currentFace = this.myDice.myCurrentFace;
+    //     const currentScoreElement = document.getElementById('currentScore' + this.player);
+    //     const playerNameElement = document.getElementById('playerName' + this.player);
+
+    //     if (currentFace === 1) {
+    //         this.changeDice();
+    //         currentPlayer.currentScore = 0;
+    //         currentScoreElement.innerText = currentPlayer.currentScore;
+    //         this.changeUser();
+    //     } else {
+    //         currentPlayer.currentScore += currentFace;
+    //         this.currentPlayer = currentPlayer;
+    //         currentScoreElement.innerText = currentPlayer.currentScore;
+    //         playerNameElement.innerText = currentPlayer.name;
+    //         this.changeDice();
+
+    //         if (currentPlayer.totalScore + currentPlayer.currentScore >= this.scoreMax) {
+    //             document.getElementById('totalScore' + this.player).innerText = currentPlayer.totalScore;
+    //         }
+    //     }
+    // }
+
     onDiceClick() {
+
         const currentPlayer = this.players[this.currentUser];
 
         if (currentPlayer.totalScore >= this.scoreMax) {
@@ -135,8 +167,16 @@ class ManageGame {
                 document.getElementById('totalScore' + this.player).innerText = currentPlayer.totalScore;
             }
         }
-    }
 
+        // 3D Animation with CSS
+        const diceButton = document.getElementById('diceButton');
+        diceButton.addEventListener('click', () => {
+            onDiceClick();
+            // Ajouter la classe 'clicked' à la div .cube.scene pour déclencher l'animation
+            const cubeElement = document.querySelector('.cube.scene');
+            cubeElement.classList.add('clicked');
+        });
+    }
 
 /**when I click hold; add score in total score, and if the score is > or = 100, then it sets up 
    * PlayerWinner and puts confetti, else switch player */
@@ -230,6 +270,8 @@ buttons.forEach(button => {
 });
 
 
+
+
 /** Modal option */
 
 // Fonction pour afficher ou masquer un élément
@@ -268,34 +310,3 @@ btnOpenModal.addEventListener('click', openModal);
  * - Refactoriser le code.
  */
 
-
-
-
-// Initialize Three.js
-let scene = new THREE.Scene();
-let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-let renderer = new THREE.WebGLRenderer({ canvas: document.querySelector('#canvas') });
-renderer.setSize(window.innerWidth, window.innerHeight);
-
-// Add orbit controls
-let controls = new THREE.OrbitControls(camera, renderer.domElement);
-controls.update();
-
-// Create a dice
-let geometry = new THREE.DiceGeometry();
-let material = new THREE.MeshStandardMaterial({ color: 0xffffff });
-let dice = new THREE.Mesh(geometry, material);
-dice.position.set(0, 0, 0);
-scene.add(dice);
-
-// Set up the animation loop
-function animate() {
-    requestAnimationFrame(animate);
-    dice.rotation.x += 0.01;
-    dice.rotation.y += 0.01;
-    renderer.render(scene, camera);
-}
-animate();
-
-// Set up the camera
-camera.position.z = 5;
