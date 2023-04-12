@@ -271,3 +271,31 @@ btnOpenModal.addEventListener('click', openModal);
 
 
 
+// Initialize Three.js
+let scene = new THREE.Scene();
+let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+let renderer = new THREE.WebGLRenderer({ canvas: document.querySelector('#canvas') });
+renderer.setSize(window.innerWidth, window.innerHeight);
+
+// Add orbit controls
+let controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls.update();
+
+// Create a dice
+let geometry = new THREE.DiceGeometry();
+let material = new THREE.MeshStandardMaterial({ color: 0xffffff });
+let dice = new THREE.Mesh(geometry, material);
+dice.position.set(0, 0, 0);
+scene.add(dice);
+
+// Set up the animation loop
+function animate() {
+    requestAnimationFrame(animate);
+    dice.rotation.x += 0.01;
+    dice.rotation.y += 0.01;
+    renderer.render(scene, camera);
+}
+animate();
+
+// Set up the camera
+camera.position.z = 5;

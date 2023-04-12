@@ -22,7 +22,7 @@
     href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
     rel="stylesheet">
 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </head>
 
 
@@ -66,12 +66,23 @@
 
 
 <!-- Dice & Roll part -->
-<div class="dice" id= "diceButton">
+<!-- <div class="dice" id= "diceButton">
     <span class="tooltiptext">Click to roll me !</span>
     <div class="cube">
         <div class="face one" id="diceImage"></div>
     </div>
+</div> -->
+
+<!-- Dice & Roll part -->
+<!-- Dice & Roll part -->
+<div class="dice" id="diceButton">
+    <span class="tooltiptext">Click to roll me !</span>
+    <div class="cube scene">
+        <div class="face one" id="diceImage"></div>
+        <canvas id="canvas"></canvas>
+    </div>
 </div>
+
 
 
 <!-- NewGame & Hold Links -->
@@ -137,8 +148,19 @@
     <!-- Local Script -->
     <script src="script.js"></script>
 
+    <!-- Three JS -->
+    <script src="https://threejs.org/build/three.js"></script>
+    <script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
 
-
+    <script type="importmap">
+        	{
+        		"imports": {
+        			"three": "https://unpkg.com/three/build/three.module.js"
+        		}
+        	}
+        </script>
     </body>
     
     </html>
+
+    

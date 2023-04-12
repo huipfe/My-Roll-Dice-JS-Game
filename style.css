@@ -416,8 +416,7 @@ cursor: pointer;
 
 
 .closeModal {
-    font-size: 3.5vw;
-    font-size: 1.5vw;
+    font-size: 2vw;
     margin: 15px;
     color: #ffffff;
     font-weight: 300;
@@ -443,10 +442,28 @@ cursor: pointer;
     transition: all 0.3s;
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1350px ) and (min-width: 1100px) {
     .btn-modal {
-    font-size: 0.8rem;
-    padding: 6px 9px;
+    font-size: 0.7rem;
+    padding: 5px 6px;
+    }
+
+    .closeModal {
+    font-size: 1.5vw;
+    margin: 12px;
+    padding: 0.8vw;
+    }
+}
+
+@media screen and (max-width: 1100px ) and (min-width: 768px) {
+    .btn-modal {
+    font-size: 0.6rem;
+    padding: 6px 7px;
+    }
+    .closeModal {
+    font-size: 1.2vw;
+    margin: 10px;
+    padding: 0.7vw;
     }
 }
 
@@ -456,19 +473,34 @@ cursor: pointer;
     font-size: 0.5rem;
     padding: 3px 5px;
     }
+    .closeModal {
+    font-size: 1vw;
+    margin: 8px;
+    padding: 0.6vw;
+    }
 }
 
 @media screen and (max-width: 576px) and (min-width: 450px) {
     .btn-modal {
     font-size: 0.4rem;
-    padding: 3px 8px;
+    padding: 3px 4px;
+    }
+    .closeModal {
+    font-size: 0.8vw;
+    margin: 6px;
+    padding: 0.5vw;
     }
 }
 
 @media screen and (max-width: 450px) {
     .btn-modal {
-    font-size: 0.2rem;
+    font-size: 0.3rem;
     padding: 1px 4px;
+    }
+    .closeModal {
+    font-size: 0.7vw;
+    margin: 5px;
+    padding: 0.4vw;
     }
 }
 /* Animation */
