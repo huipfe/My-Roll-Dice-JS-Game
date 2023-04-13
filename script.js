@@ -51,7 +51,7 @@ class ManageGame {
     scoreId = 'scorePlayer1'
     playerZone = 'playerZone1'
     playerWinner = 'playerWinner1'
-    scoreMax = 100
+    scoreMax = 10
 
     resetGame() {
         // Réinitialiser les valeurs des joueurs
@@ -106,37 +106,6 @@ class ManageGame {
     
 
 // When I click on the dice
-    // onDiceClick() {
-    //     const currentPlayer = this.players[this.currentUser];
-
-    //     if (currentPlayer.totalScore >= this.scoreMax) {
-    //         return;
-    //     }
-
-    //     this.myDice.rollDice();
-
-    //     const currentFace = this.myDice.myCurrentFace;
-    //     const currentScoreElement = document.getElementById('currentScore' + this.player);
-    //     const playerNameElement = document.getElementById('playerName' + this.player);
-
-    //     if (currentFace === 1) {
-    //         this.changeDice();
-    //         currentPlayer.currentScore = 0;
-    //         currentScoreElement.innerText = currentPlayer.currentScore;
-    //         this.changeUser();
-    //     } else {
-    //         currentPlayer.currentScore += currentFace;
-    //         this.currentPlayer = currentPlayer;
-    //         currentScoreElement.innerText = currentPlayer.currentScore;
-    //         playerNameElement.innerText = currentPlayer.name;
-    //         this.changeDice();
-
-    //         if (currentPlayer.totalScore + currentPlayer.currentScore >= this.scoreMax) {
-    //             document.getElementById('totalScore' + this.player).innerText = currentPlayer.totalScore;
-    //         }
-    //     }
-    // }
-
     onDiceClick() {
 
         const currentPlayer = this.players[this.currentUser];
@@ -191,6 +160,7 @@ class ManageGame {
             // Player has won!
             const playerZone = document.getElementById(this.playerZone);
             playerZone.classList.add('confetti');
+            this.applause();
             document.getElementById(this.playerWinner).style.display = 'block';
             const playerWinner = document.getElementById(`playerWinner${this.player}`);
             playerWinner.innerText = `${this.players[this.currentUser].name} has won!`;
@@ -251,8 +221,14 @@ class ManageGame {
         return classMap[myNumberOfDice];
     }
 
+    //Applause in case of victory
+    applause() {
+    let playWin = document.getElementById('bruitage')
+    playWin.play();
 
+    }
 }
+
 
 
 /** click on one of this three button for play */
@@ -315,4 +291,5 @@ btnOpenModal.addEventListener('click', openModal);
  * Faire 3D avec Three.js
  * OK - Faire 3D avec CSS/JS
  */
+
 
