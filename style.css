@@ -392,47 +392,52 @@ cursor: pointer;
   height: 100px;
 } */
 
-.dice .cube {
+/* .dice .cube {
   position: absolute;
   width: 100%;
   height: 100%;
+  max-width: 100px;
+  max-height: 100px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   transform-style: preserve-3d;
   transition: transform 1s;
+
 }
 
 .dice .face {
   position: absolute;
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: 100%;
   border: 1px solid black;
   background-color: white;
-  text-align: center;
-  font-size: 72px;
-  font-weight: bold;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .dice .one {
-  transform: translateZ(50px);
+  transform: translateZ(calc(0.1vw + 50px));
 }
 
 .dice .two {
-  transform: rotateY(90deg) translateZ(50px);
+  transform: rotateY(90deg) translateZ(calc(0.1vw + 50px));
 }
 
 .dice .three {
-  transform: rotateX(-90deg) translateZ(50px);
+  transform: rotateX(-90deg) translateZ(calc(0.1vw + 50px));
 }
 
 .dice .four {
-  transform: rotateX(90deg) translateZ(50px);
+  transform: rotateX(90deg) translateZ(calc(0.1vw + 50px));
 }
 
 .dice .five {
-  transform: rotateY(-90deg) translateZ(50px);
+  transform: rotateY(-90deg) translateZ(calc(0.1vw + 50px));
 }
 
 .dice .six {
-  transform: rotateY(180deg) translateZ(50px);
+  transform: rotateY(180deg) translateZ(calc(0.1vw + 50px));
 }
 
 .cube.scene:hover .face {
@@ -445,21 +450,21 @@ cursor: pointer;
 animation: roll 0.5s ease-in-out forwards;
 } */
 
-.cube.scene.clicked .face {
+.cube.scene.face {
   animation: roll 0.5s ease-in-out forwards;
 }
 
 @keyframes roll {
   0% {
-    transform: rotateX(-90deg) translateZ(50px);
+    transform: rotateX(-90deg) translateZ(calc(0.1vw + 50px));
   }
   50% {
-    transform: rotateX(-90deg) rotateY(180deg) translateZ(50px);
+    transform: rotateX(-90deg) rotateY(180deg) translateZ(calc(0.1vw + 50px));
   }
   100% {
-    transform: rotateX(0deg) rotateY(180deg) translateZ(50px);
+    transform: rotateX(0deg) rotateY(180deg) translateZ(calc(0.1vw + 50px));
   }
-}
+} */
 
 
 /* Overlay */

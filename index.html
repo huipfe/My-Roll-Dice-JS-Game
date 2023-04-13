@@ -66,14 +66,14 @@
 
 
 <!-- Dice & Roll part -->
-<!-- <div class="dice" id= "diceButton">
+<div class="dice" id= "diceButton">
     <span class="tooltiptext">Click to roll me !</span>
     <div class="cube">
         <div class="face one" id="diceImage"></div>
     </div>
-</div> -->
+</div>
 
-<div class="dice" id="diceButton">
+<!-- <div class="dice" id="diceButton">
     <span class="tooltiptext">Click to roll me !</span>
     <div class="cube" id="diceImage">
         <div class="face one"></div>
@@ -83,7 +83,7 @@
         <div class="face five"></div>
         <div class="face six"></div>
     </div>
-</div>
+</div> -->
 
 
 
@@ -152,16 +152,9 @@
     <script src="script.js"></script>
 
     <!-- Three JS -->
-    <script src="https://threejs.org/build/three.js"></script>
-    <script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
+    <script type="module">
+    import * as THREE from 'https://unpkg.com/three@0.134.0/build/three.module.js';</script>
 
-    <script type="importmap">
-        	{
-        		"imports": {
-        			"three": "https://unpkg.com/three/build/three.module.js"
-        		}
-        	}
-        </script>
     </body>
     
     </html>

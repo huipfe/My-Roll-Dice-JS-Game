@@ -168,14 +168,14 @@ class ManageGame {
             }
         }
 
-        // 3D Animation with CSS
-        const diceButton = document.getElementById('diceButton');
-        diceButton.addEventListener('click', () => {
-            onDiceClick();
-            // Ajouter la classe 'clicked' à la div .cube.scene pour déclencher l'animation
-            const cubeElement = document.querySelector('.cube.scene');
-            cubeElement.classList.add('clicked');
-        });
+        // // 3D Animation with CSS
+        // const diceButton = document.getElementById('diceButton');
+        // diceButton.addEventListener('click', () => {
+        //     onDiceClick();
+        //     // Ajouter la classe 'clicked' à la div .cube.scene pour déclencher l'animation
+        //     const cubeElement = document.querySelector('.cube.scene');
+        //     cubeElement.classList.add('clicked');
+        // });
     }
 
 /**when I click hold; add score in total score, and if the score is > or = 100, then it sets up 
@@ -307,6 +307,12 @@ btnOpenModal.addEventListener('click', openModal);
  * OK - onDiceClick - Corriger la valeur de fin, quand on ajoute notre résultat final, avant d'atteindre 100, qui s'addition avec 100, au lieu d'atteindre 100 tout juste
  * OK - En HTML : Modal & Game Rules, mieux faire (en utilisant Bootstrap ?) les règles, qu'elles soient plus claires.
  * OK - Ajout en HTML,CSS et JS, d'un bouton Rules, pour revoir la modal Game Rules.
- * - Refactoriser le code.
+ * OK - Refactoriser le code.
+ */
+
+// TODO 3D
+/** Tester 3D 
+ * Faire 3D avec Three.js
+ * OK - Faire 3D avec CSS/JS
  */
 
