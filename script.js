@@ -51,7 +51,7 @@ class ManageGame {
     scoreId = 'scorePlayer1'
     playerZone = 'playerZone1'
     playerWinner = 'playerWinner1'
-    scoreMax = 10
+    scoreMax = 100
 
     resetGame() {
         // Réinitialiser les valeurs des joueurs
@@ -78,6 +78,9 @@ class ManageGame {
 
         // Réactiver le bouton Hold
         document.getElementById('myHoldButton').classList.remove('disabled');
+
+        // Stop Applause 
+        this.stopApplause();
 
         // Réinitialiser les éléments HTML
         for (let i = 0; i < scoreIds.length; i++) {
@@ -112,6 +115,7 @@ class ManageGame {
 
         if (currentPlayer.totalScore >= this.scoreMax) {
             return;
+            // if player has already win, do nothing and return
         }
 
         this.myDice.rollDice();
@@ -136,15 +140,6 @@ class ManageGame {
                 document.getElementById('totalScore' + this.player).innerText = currentPlayer.totalScore;
             }
         }
-
-        // // 3D Animation with CSS
-        // const diceButton = document.getElementById('diceButton');
-        // diceButton.addEventListener('click', () => {
-        //     onDiceClick();
-        //     // Ajouter la classe 'clicked' à la div .cube.scene pour déclencher l'animation
-        //     const cubeElement = document.querySelector('.cube.scene');
-        //     cubeElement.classList.add('clicked');
-        // });
     }
 
 /**when I click hold; add score in total score, and if the score is > or = 100, then it sets up 
@@ -205,8 +200,6 @@ class ManageGame {
         diceImage.classList.add(newClassName);
     }
 
-
-
     //sets the images in relation to the random
     getMyClassName(myNumberOfDice) {
         const classMap = {
@@ -223,13 +216,18 @@ class ManageGame {
 
     //Applause in case of victory
     applause() {
-    let playWin = document.getElementById('bruitage')
-    playWin.play();
+        let playWin = document.getElementById('soundEffect')
+        playWin.play();
+
+    }
+
+    stopApplause() {
+        let playWin = document.getElementById('soundEffect')
+        playWin.pause();
+        playWin.currentTime = 0;
 
     }
 }
-
-
 
 /** click on one of this three button for play */
 
@@ -244,9 +242,6 @@ buttons.forEach(button => {
         ManageGame.getNewGame()[button.fn]();
     });
 });
-
-
-
 
 /** Modal option */
 
@@ -284,6 +279,7 @@ btnOpenModal.addEventListener('click', openModal);
  * OK - En HTML : Modal & Game Rules, mieux faire (en utilisant Bootstrap ?) les règles, qu'elles soient plus claires.
  * OK - Ajout en HTML,CSS et JS, d'un bouton Rules, pour revoir la modal Game Rules.
  * OK - Refactoriser le code.
+ * OK - Ajout d'un bruit de victoire, applaudissement
  */
 
 // TODO 3D
