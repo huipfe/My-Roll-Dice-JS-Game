@@ -18,13 +18,11 @@
  * Class dice
 */
 
+
 // Random Dice
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max)
-}
+const getRandomInt = (max) => Math.floor(Math.random() * max)
 
-
-/** Class Game */
+/** Class Player */
 class Player {
     constructor(name) {
         this.name = name
@@ -33,31 +31,38 @@ class Player {
     }
 }
 
+/** Class Dice */
 class Dice {
+    constructor() {
+        this.myCurrentFace = null
+        this.oldFace = null
+    }
+
     rollDice() {
         this.oldFace = this.myCurrentFace
         //random +1 for have a number 1 to 6
         this.myCurrentFace = getRandomInt(6) + 1
-
     }
 }
-// Construct Object fo manage my roll dice's Game.
-class ManageGame {
 
-    //game's default variable
-    static gameInstance = null
-    currentUser = 0
-    player = 1
-    scoreId = 'scorePlayer1'
-    playerZone = 'playerZone1'
-    playerWinner = 'playerWinner1'
-    scoreMax = 100
+class ManageGame {
+    constructor() {
+        this.gameInstance = null;
+        this.currentUser = 0;
+        this.player = 1;
+        this.scoreId = 'scorePlayer1';
+        this.playerZone = 'playerZone1';
+        this.playerWinner = 'playerWinner1';
+        this.scoreMax = 100;
+        this.players = [new Player('Player 1'), new Player('Player 2')];
+        this.myDice = new Dice();
+    }
 
     resetGame() {
         // Réinitialiser les valeurs des joueurs
-        for (let i = 0; i < this.players.length; i++) {
-            this.players[i].currentScore = 0;
-            this.players[i].totalScore = 0;
+        for (const player of this.players) {
+            player.currentScore = 0;
+            player.totalScore = 0;
         }
 
         // Tableaux pour stocker les noms des éléments HTML
@@ -93,20 +98,12 @@ class ManageGame {
         }
     }
 
-    //Game's principal class
     static getNewGame() {
-        if (ManageGame.gameInstance === null)
-            ManageGame.gameInstance = new ManageGame()
-        return ManageGame.gameInstance
-
+        if (!this.gameInstance) {
+            this.gameInstance = new ManageGame();
+        }
+        return this.gameInstance;
     }
-    constructor() {
-        this.players = []
-        this.players.push(new Player('Player 1'))
-        this.players.push(new Player('Player 2'))
-        this.myDice = new Dice()
-    }
-    
 
 // When I click on the dice
     onDiceClick() {
@@ -284,8 +281,6 @@ btnOpenModal.addEventListener('click', openModal);
 
 // TODO 3D
 /** Tester 3D 
- * Faire 3D avec Three.js
+ * Annulé - Faire 3D avec Three.js
  * OK - Faire 3D avec CSS/JS
  */
-
-
