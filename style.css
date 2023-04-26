@@ -288,10 +288,40 @@ pointer-events:none;
     height: 100%;
     background-size: contain;
     background-repeat: no-repeat;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9);
-    border-radius: hidden;
+    /* box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9);
+    border-radius: 50px; */
     opacity: 0.9;
 }
+
+/* @media (max-width: 469px) {
+    .face {
+        border-radius: 20px;
+    }
+}
+
+@media (min-width: 470px) and (max-width: 767px) {
+    .face {
+        border-radius: 20px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .face {
+        border-radius: 30px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1499px) {
+    .face {
+        border-radius: 35px;
+    }
+}
+
+@media (min-width: 1500px) {
+    .face {
+        border-radius: 40px;
+    }
+} */
 
 .tooltiptext {
     visibility: hidden;
@@ -377,34 +407,34 @@ pointer-events:none;
 
 
 .face.one {
-    background: url(images/DiceNumber1.png) no-repeat center;
+    background: url(images/DiceNumber1Shadow.png) no-repeat center;
     background-size: 12vw 12vw;
     
 }
 
 .face.two {
-    background: url(images/DiceNumber2.png) no-repeat center;
+    background: url(images/DiceNumber2Shadow.png) no-repeat center;
     background-size: 12vw 12vw;
 }
 
 .face.three {
-    background: url(images/DiceNumber3.png) no-repeat center;
+    background: url(images/DiceNumber3Shadow.png) no-repeat center;
     background-size: 12vw 12vw;
 }
 
 .face.four {
-    background: url(images/DiceNumber4.png) no-repeat center;
+    background: url(images/DiceNumber4Shadow.png) no-repeat center;
     background-size: 12vw 12vw;
 }
 
 .face.five {
-    background: url(images/DiceNumber5.png) no-repeat center;
+    background: url(images/DiceNumber5Shadow.png) no-repeat center;
     background-size: 12vw 12vw;
 }
 
 
 .face.six {
-    background: url(images/DiceNumber6.png) no-repeat center;
+    background: url(images/DiceNumber6Shadow.png) no-repeat center;
     background-size: 12vw 12vw;
 }
 
@@ -458,7 +488,7 @@ pointer-events:none;
     }
 }
 
-@media screen and (max-width: 632px) and (min-width: 450px) {
+@media screen and (max-width: 631px) and (min-width: 450px) {
 .modal {
     font-size: 2vw;
     width: 70vw;
@@ -475,7 +505,7 @@ pointer-events:none;
     }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 451px) {
 .modal {
     font-size: 3vw;
     width: 80vw;
@@ -532,7 +562,7 @@ pointer-events:none;
     }
 }
 
-@media screen and (max-width: 1500px ) and (min-width: 1250px) {
+@media screen and (max-width: 1499px ) and (min-width: 1250px) {
     .btn-modal {
     font-size: 0.7rem;
     padding: 5px 6px;
@@ -545,7 +575,7 @@ pointer-events:none;
     }
 }
 
-@media screen and (max-width: 1250px ) and (min-width: 950px) {
+@media screen and (max-width: 1249px ) and (min-width: 950px) {
     .btn-modal {
     font-size: 0.6rem;
     padding: 6px 7px;
@@ -558,7 +588,7 @@ pointer-events:none;
 }
 
 
-@media screen and (max-width: 950px) and (min-width: 743px) {
+@media screen and (max-width: 949px) and (min-width: 743px) {
     .btn-modal {
     font-size: 0.5rem;
     padding: 3px 5px;
@@ -570,7 +600,7 @@ pointer-events:none;
     }
 }
 
-@media screen and (max-width: 743px) and (min-width: 470px) {
+@media screen and (max-width: 742px) and (min-width: 470px) {
     .btn-modal {
     font-size: 0.4rem;
     padding: 3px 4px;
@@ -582,7 +612,7 @@ pointer-events:none;
     }
 }
 
-@media screen and (max-width: 470px) {
+@media screen and (max-width: 469px) {
     .btn-modal {
     font-size: 0.3rem;
     padding: 2px 2px;
