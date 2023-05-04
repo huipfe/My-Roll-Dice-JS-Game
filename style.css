@@ -268,7 +268,7 @@ pointer-events:none;
 }
 
 /* Roll Dice*/
-.dice {
+/* .dice {
     position: absolute;
     top: calc(50vh - (12vw / 2));
     left: calc(50vw - (12vw / 2));
@@ -277,14 +277,17 @@ pointer-events:none;
     perspective: 30vw;
     cursor: pointer;
     
-}
+} */
 
 /* -----------------------------------------3D Dice------------------------------------------------*/
 
 .dice3D {
-    position: relative;
-    width: 100px;
-    height: 100px;
+    position: absolute;
+    top: calc(50vh - (12vw / 2));
+    left: calc(50vw - (12vw / 2));
+    width: 13vw;
+    height: 12vw;
+    cursor: pointer;
     transform-style: preserve-3d;
     transition: 1s ease;
 }
@@ -468,7 +471,7 @@ pointer-events:none;
     }
 }
 
-.dice:hover .tooltiptext {
+.dice3D:hover .tooltiptext {
     visibility: visible;
 }
 
