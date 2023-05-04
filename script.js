@@ -296,7 +296,8 @@ const rollBtn = document.querySelector('.dice3D');
 
 const randomDice = () => {
 
-    const random = Math.floor(Math.random() * 10);
+    const random = Math.floor((Math.random() * 6) +1 );
+    
 
     if (random >= 1 && random <= 6 ){ 
         rollDice(random);
