@@ -200,12 +200,12 @@ class ManageGame {
     //sets the images in relation to the random
     getMyClassName(myNumberOfDice) {
         const classMap = {
-            1: 'one',
-            2: 'two',
-            3: 'three',
-            4: 'four',
-            5: 'five',
-            6: 'six'
+            1: 'front',
+            6: 'back',
+            2: 'top',
+            5: 'bottom',
+            3: 'right',
+            4: 'left'
         };
 
         return classMap[myNumberOfDice];
@@ -231,7 +231,8 @@ class ManageGame {
 const buttons = [
     { id: 'newGameButton', fn: 'resetGame' },
     { id: 'myHoldButton', fn: 'onHoldClick' },
-    { id: 'diceButton', fn: 'onDiceClick' }
+    { id: 'diceButton', fn: 'onDiceClick' },
+    { id: 'Dice3dButton', fn: 'onDiceClick'}
 ];
 
 buttons.forEach(button => {
@@ -283,4 +284,65 @@ btnOpenModal.addEventListener('click', openModal);
 /** Tester 3D 
  * Annulé - Faire 3D avec Three.js
  * OK - Faire 3D avec CSS/JS
+ * OK - 2 - Faire 3D avec CSS/JS 
  */
+
+
+// TODO 3D - CSS/JS
+/** 3D Dice */
+
+const dice = document.querySelector('.dice3D');
+const rollBtn = document.querySelector('.dice3D');
+
+const randomDice = () => {
+
+    const random = Math.floor((Math.random() * 6) +1 );
+    
+
+    if (random >= 1 && random <= 6 ){ 
+        rollDice(random);
+    }else{
+        randomDice();
+    }
+}
+
+const  rollDice = random => {
+
+    dice.style.animation = 'rolling 4s';
+
+    setTimeout (() => {
+        switch (random) {
+            case 1:
+                dice.style.transform = 'rotateX(0deg) rotateY(0deg)';
+                break;
+            
+            case 6:
+                dice.style.transform = 'rotateX(180deg) rotateY(0deg)';
+                break;
+
+            case 2:
+                dice.style.transform = 'rotateX(-90deg) rotateY(0deg)';
+                break;
+                
+            case 5:
+                dice.style.transform = 'rotateX(90deg) rotateY(0deg)';
+                break; 
+                
+            case 3:
+                dice.style.transform = 'rotateX(0deg) rotateY(90deg)';
+                break;
+
+            case 4:
+                dice.style.transform = 'rotateX(0deg) rotateY(-90deg)';
+                break;
+
+            default:
+                break;      
+        }
+
+        dice.style.animation = 'none';
+    }, 4050)
+
+}
+
+rollBtn.addEventListener('click', randomDice);
