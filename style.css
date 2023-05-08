@@ -1,9 +1,6 @@
 /* Import FontAwesome */
 @import url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.css');
 
-/* Import Bootstrap Icone */
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css");
-
 /* import Lato Style */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
@@ -110,7 +107,7 @@ body {
 
 
 /* Player Box */
-.playerActuelScoreBox {
+.playerActuelScoreBox {;
     display: block;
     margin: 0;
     margin-top: 5vh;
@@ -119,7 +116,6 @@ body {
     min-width: 15%;
     background-color: #850514;
     text-align: center;
-    /* vertical-align: middle; */
     border-radius: 8px;
     opacity: 0.9;
     box-shadow: 8px 8px 8px rgba(0, 0, 0, 1);
@@ -131,7 +127,7 @@ body {
     padding: 0;
     font-size: 1.3vw;
     font-weight: 300px;
-        color: #fff;
+    color: #fff;
     text-transform: uppercase;
     
 }
@@ -164,7 +160,7 @@ body {
 }
 
 .playerWinner::before {
-    content: '\f59c';
+    /* content: '\f59c'; */
     font-family: 'Font Awesome\ 5 Free';
     font-weight: 900;
     margin-right: 0.5rem;
@@ -257,14 +253,35 @@ pointer-events:none;
 }
 
 .hold::before,
-.rules::before,
-.newGame::before {
+.newGame::before,
+.rules::before {
     font-family: 'Font Awesome\ 5 Free';
+    color: #777;
+    background-color: #fff
+}
+
+.hold::before{
     font-weight: 900;
     margin-right: 0.5rem;
     color: #AE0115;
     opacity: 0.8;
-    content: '\f055';
+    content: '\f522';
+}
+
+.rules::before{
+    font-weight: 900;
+    margin-right: 0.5rem;
+    color: #AE0115;
+    opacity: 0.8;
+    content: '\f24e';
+}
+
+.newGame::before {
+    font-weight: 900;
+    margin-right: 0.5rem;
+    color: #AE0115;
+    opacity: 0.8;
+    content: '\f11b';
 }
 
 /* Roll Dice*/
@@ -279,47 +296,14 @@ pointer-events:none;
     
 }
 
-
 .face {
     position: absolute;
     width: 100%;
     height: 100%;
     background-size: contain;
     background-repeat: no-repeat;
-    /* box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9);
-    border-radius: 50px; */
     opacity: 0.9;
 }
-
-/* @media (max-width: 469px) {
-    .face {
-        border-radius: 20px;
-    }
-}
-
-@media (min-width: 470px) and (max-width: 767px) {
-    .face {
-        border-radius: 20px;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-    .face {
-        border-radius: 30px;
-    }
-}
-
-@media (min-width: 992px) and (max-width: 1499px) {
-    .face {
-        border-radius: 35px;
-    }
-}
-
-@media (min-width: 1500px) {
-    .face {
-        border-radius: 40px;
-    }
-} */
 
 .tooltiptext {
     visibility: hidden;
@@ -530,7 +514,7 @@ pointer-events:none;
 .closeModal {
     font-size: 2vw;
     margin: 15px;
-    color: #ffffff;
+    color: #000000;
     font-weight: 300;
     text-transform: uppercase;
     text-decoration: none;

@@ -15,17 +15,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
-    <!-- Bootstrap CSS Icon -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-
     <!-- Lato Font --> <!-- https://fonts.google.com/specimen/Lato -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
         rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 
 
@@ -81,9 +77,13 @@
         <audio id="soundEffect" src="audio/soundEffect.wav"></audio>
 
         <!-- NewGame & Hold Links -->
-        <a class="newGame" id="newGameButton">New Game</a>
+        <a class="newGame" id="newGameButton">
+        New Game
+        </a>
 
-        <a class="hold" id="myHoldButton">Hold</a>
+        <a class="hold" id="myHoldButton">
+            Hold
+        </a>
 
         <!-- Modal & Game Rules -->
         <div class="overlay"></div>
@@ -95,7 +95,7 @@
             </div>
 
             <div class="modal-body">
-                <p>Rules are simple. Click on the <button type="button" class="btn-modal bi-cursor-fill">NEW
+                <p>Rules are simple. Click on the <button type="button" class="btn-modal bi bi-cursor-fill">NEW
                         GAME</button> button
                     to start a new game.</p>
                 <p>One of the two players is automatically selected to start the game. <br>The player who has a blinking
@@ -111,7 +111,7 @@
                     and their turn ends!</p>
                 <p>To keep the number of points accumulated and add them to the total points earned in the game, <br>the
                     player will
-                    have to click the <button type="button" class="btn-modal bi-cursor">HOLD</button> button. The next
+                    have to click the <button type="button" class="btn-modal bi bi-cursor-fill">HOLD</button> button. The next
                     player
                     will then take their turn.</p>
                 <br>
@@ -120,13 +120,15 @@
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary bi bi-x closeModal"
-                    data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary bi bi-x-circle-fill closeModal"
+                    data-bs-dismiss="modal"> Close</button>
             </div>
 
         </div>
 
-        <a class="rules" id="myModalRule">Rules</a>
+        <a class="rules" id="myModalRule">
+            Rules
+        </a>
 
 
     </main>
